@@ -23,6 +23,9 @@ Will be stylizing and adding features it in the future.
 ## Credits
 
 Followed tutorial from Antonio on Youtube. 
+
 Youtube channel: https://www.youtube.com/@DevAntonioRogers
+
 Video followed: https://www.youtube.com/watch?v=vB4xs2KXDqE
+
 Github: https://github.com/DevAntonioRogers/next14-pokedex/blob/main/app/page.tsx
