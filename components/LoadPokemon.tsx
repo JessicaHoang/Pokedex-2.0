@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ClipLoader } from "react-spinners";
 import { fetchPokemon } from "@/app/actions/getPokemon";
-import PokemonCard from "./PokemonCard";
+import PokemonCard, {Pokemon} from "./PokemonCard";
 
 const LoadPokemon = ({search, initialPokemon}:{
     search: string | undefined;
@@ -28,8 +28,7 @@ const LoadPokemon = ({search, initialPokemon}:{
         setPokemon((prev) => {
             if (!prev) return newPokemon;
             const uniquePokemon = newPokemon.filter(
-                (
-                poke: Pokemon) =>
+                (poke: Pokemon) =>
                 !prev.some((p) => p.name === poke.name)
 );
             return [...prev, ...uniquePokemon];
@@ -42,12 +41,19 @@ const LoadPokemon = ({search, initialPokemon}:{
         }
     }, [inView]);
     return (
-        <div className="grid sm:grid-cols-2
-        lg:grid-cols-3 gap-10">
+        <>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {pokemon?.map((poke: Pokemon) =>(
-                <PokemonCard />
+                <PokemonCard key={poke.url} pokemon={poke}/>
             ))}
         </div>
+        {pokemon && pokemon.length >= 24 && (
+            <div className="flex justify-center items-center p-4"
+            ref={ref}>
+                <ClipLoader color="#fff" />
+            </div>
+        )}
+        </>
     )
 };
 
