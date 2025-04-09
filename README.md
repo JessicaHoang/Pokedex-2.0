@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Goals for this project:
 
 Getting back into creating websites and other cool projects. 
-Will be stylizing it in the future.
+Will be stylizing and adding features it in the future.
 
 
 ## Credits
