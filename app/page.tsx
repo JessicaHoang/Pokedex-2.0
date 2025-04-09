@@ -6,14 +6,14 @@ const Page = async ({searchParams}:{ searchParams: {
   }
 }) => {
   const search = typeof searchParams.search === "string" 
-? searchParams.search
+  ? searchParams.search
   : undefined;
   const pokemon = await fetchPokemon({search});
 
   return (
   <div className="max-w-[1500px] w-[95%] mx-auto">
     <Search search={search} />
-    <ul>
+    <ul key={Math.random()}>
       <LoadPokemon search={search} initialPokemon={pokemon}/>
     </ul>
     </div>

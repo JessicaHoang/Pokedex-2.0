@@ -1,7 +1,7 @@
 "use server"
 
 export async function getPokemon({query, page=1, 
-limit = 10000}:{
+limit = 1000}:{
     query?: string
     page?: number
     limit?: number
