@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useAnimation, motion} from "framer-motion";
+import Image from "next/image";
 
 export interface Pokemon {
     url: string;
@@ -53,7 +54,7 @@ const PokemonCard = ({pokemon}) => {
     };
 
     const pokemonNumber = getPokemonNumberFromUrl(pokemon.url);
-    
+
     return (
         <div className="flex items-center justify center flex-col relative">
             <motion.div 
@@ -74,6 +75,11 @@ const PokemonCard = ({pokemon}) => {
                     className="absolute top-0 text-white font-bold p-3 text-5xl">
                         {pokemonNumber}
                     </div>
+                    <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${pokemonNumber}.png`} 
+                    width={220}
+                    height={220}
+                    alt="pokemon image"
+                    className="z-[9999]"/>
 
                 </motion.div>
             </motion.div>
