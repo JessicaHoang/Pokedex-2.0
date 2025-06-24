@@ -7,7 +7,7 @@ const Navbar = () => {
         mx-auto flex justify-center">
             <Link href={"/"}>
             <Image 
-            src={"/logo.svg"} 
+            src={"/Pokedex_Logo.png"} 
             alt={"Pokedex 2.0 logo"} 
             width={300} height={150}
             />
