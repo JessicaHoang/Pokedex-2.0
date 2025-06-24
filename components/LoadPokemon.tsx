@@ -12,7 +12,7 @@ const LoadPokemon = ({search, initialPokemon}:{
 }) => {
     const [pokemon, setPokemon] = useState (initialPokemon);
     const [page, setPage] = useState(1);
-    const[loading, setLoading] = useState(false);
+    const[loading, setLoading] = useState<boolean>(false);
     const {inView, ref} = useInView();
 
     //HELPER FUNCTION HERE TO INTRODUCE DELAY FOR OUT DATA
@@ -42,6 +42,7 @@ const LoadPokemon = ({search, initialPokemon}:{
     }, [inView]);
     return (
         <>
+        {loading && <div>Loading...</div>} {/* Display loading indicator */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {pokemon?.map((poke: Pokemon) =>(
                 <PokemonCard key={poke.url} pokemon={poke}/>

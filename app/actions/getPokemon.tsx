@@ -6,7 +6,7 @@ limit = 1000}:{
     page?: number
     limit?: number
 }) {
-    let apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${
         (page - 1) * 24}`
     try {
         const response = await fetch(apiUrl)
